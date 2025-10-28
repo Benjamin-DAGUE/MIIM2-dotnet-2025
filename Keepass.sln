@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keepass.DBLib", "Keepass.DBLib\Keepass.DBLib.csproj", "{24E7F3AB-82D0-4A9E-9786-5DA01103F930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keepass.CLI", "Keepass.CLI\Keepass.CLI.csproj", "{C957C671-C469-4404-8345-52A05649E119}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24E7F3AB-82D0-4A9E-9786-5DA01103F930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E7F3AB-82D0-4A9E-9786-5DA01103F930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E7F3AB-82D0-4A9E-9786-5DA01103F930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E7F3AB-82D0-4A9E-9786-5DA01103F930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C957C671-C469-4404-8345-52A05649E119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C957C671-C469-4404-8345-52A05649E119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C957C671-C469-4404-8345-52A05649E119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C957C671-C469-4404-8345-52A05649E119}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67770019-2310-468F-921F-5D3459A71A74}
+	EndGlobalSection
+EndGlobal

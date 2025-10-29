@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "Inscription d’application : EntraIDAuthWebAPI, locataire : grindboxlab.fr (grindboxlab.fr - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}

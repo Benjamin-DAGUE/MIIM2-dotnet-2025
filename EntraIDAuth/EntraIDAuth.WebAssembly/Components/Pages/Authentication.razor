@@ -1,0 +1,13 @@
+﻿@page "/authentication/{action}"
+
+@*
+  Voir la page Home.razor pour plus de détail.
+*@
+@attribute [AllowAnonymous]
+
+
+<RemoteAuthenticatorView Action="@Action" />
+
+@code{
+    [Parameter] public string? Action { get; set; }
+}

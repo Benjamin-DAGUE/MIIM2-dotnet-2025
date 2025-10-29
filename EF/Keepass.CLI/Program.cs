@@ -10,7 +10,7 @@ public static class Program
 
         using KeepassDBContext dBContext = new();
 
-        Vault vault = dBContext.Vaults.First();
+        Vault vault = dBContext.Vaults.Include(v => v.Creator). First();
 
 
         vault.Name = "Changed";

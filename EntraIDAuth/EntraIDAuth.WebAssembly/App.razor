@@ -1,0 +1,36 @@
+﻿@*
+  App.Razor est le composant racine de notre application.
+  Il commence par un composant CascadingAuthenticationState qui gère la cascade de l'état d'authentification de l'tuilisateur
+  Ensuite, le composant Routeur se charge de rediriger l'utilisateur (found / not found)'
+  Dans le cas du Found, on utilise ensuite AuthorizeRouteView qui permet de gérer l'affichage d'une route dans un Layout (par défaut MainLayout).
+  AuthorizeRouteView se charge de vérifier si la page a l'attribut Authorize et si l'utilisateur est autorisé à l'afficher (y compris la gestion des rôles).
+  Si ce n'est pas le cas, NotAuthorized est utilisé.
+    - Si l'utilisateur est déconnecté on le redirige vers la connexion Entra ID avec MSAL
+    - Si l'utilisateur est connecté on lui affiche un message comme quoi il n'est pas autorisé.
+*@
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    @if (context.User.Identity?.IsAuthenticated != true)
+                    {
+                        <RedirectToLogin />
+                    }
+                    else
+                    {
+                        <p role="alert">You are not authorized to access this resource.</p>
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            @*Utilisé lorsque l'utilisateur demande une route qui n'a pas été résolue par le Router.*@
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>

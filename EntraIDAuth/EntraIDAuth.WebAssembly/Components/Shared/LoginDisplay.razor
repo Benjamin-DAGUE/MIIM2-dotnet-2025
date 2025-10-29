@@ -1,0 +1,28 @@
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        Hello, @context.User.Identity?.Name!
+        @* <button class="nav-link btn btn-link" @onclick="@(() => Inspect(context))">Inspect</button> *@
+        <button class="nav-link btn btn-link" @onclick="Logout">Log out</button>
+    </Authorized>
+    <NotAuthorized>
+        <a href="authentication/login">Log in</a>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private void Logout(MouseEventArgs args)
+    {
+        Navigation.NavigateToLogout("authentication/logout");
+    }
+
+    //Uncomment and call this method to allow user inspection with debugger
+    // private void Inspect(AuthenticationState state)
+    // {
+    //     if (state.User.IsInRole(Roles.User))
+    //     {
+
+    //     }
+    // }
+}

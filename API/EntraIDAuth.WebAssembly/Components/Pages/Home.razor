@@ -1,0 +1,16 @@
+﻿@page "/"
+
+@*
+  Il est possible de préciser qu'un composant autorise les utilisateurs anonymes (non connecté).
+  Bien que ce soit le comportement par défaut, cela peut avoir du sens si par exemple on ajoute la ligne suivante :
+    Dans _Imports.razor : @attribute [Authorize]
+    Dans ce cas, le comportement par défaut sera de nécessiter une connexion.
+    ATTENTION A LAISSER TOUJOURS ANONYME LA ROUTE D'AUTHENTIFICATION... (voir Authentication.razor)
+*@
+@*@attribute [AllowAnonymous]*@
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.

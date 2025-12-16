@@ -45,6 +45,11 @@ builder.Services
     .AddScoped<AppUserService>()
     .AddScoped<VaultService>();
 
+//Ajout des services pour les middleware
+builder.Services
+    .AddScoped<GetOrCreateAppUserIdMiddleware>()
+    .AddScoped<ManageExceptionMiddleware>();
+
 //Indique que l'API va être développé à l'aide de Controllers.
 builder.Services.AddControllers();
 

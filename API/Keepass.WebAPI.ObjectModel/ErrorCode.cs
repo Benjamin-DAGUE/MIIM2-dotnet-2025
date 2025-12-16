@@ -1,5 +1,8 @@
-﻿namespace Keepass.WebAPI.ObjectModel;
+﻿using System.Text.Json.Serialization;
 
+namespace Keepass.WebAPI.ObjectModel;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum ErrorCode
 {
     Undefined = 0,

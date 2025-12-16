@@ -16,7 +16,7 @@ string apiScope = builder.Configuration.GetValue<string>("WebAPI:Scope") ?? thro
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
          .AddMicrosoftIdentityWebApp(builder.Configuration, "AzureAd")
             .EnableTokenAcquisitionToCallDownstreamApi([apiScope])
-               .AddDownstreamApi("EntraIDAuthWebAPI", options =>
+               .AddDownstreamApi("KeepassWebAPI", options =>
                {
                    options.BaseUrl = apiEndpoint;
                    options.Scopes = [apiScope];

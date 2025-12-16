@@ -9,7 +9,6 @@ public class GetOrCreateAppUserIdMiddleware(AppUserService appUserService, ILogg
 {
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        await next(context);
         try
         {
             if ((context.User.Identity?.IsAuthenticated ?? false) == false

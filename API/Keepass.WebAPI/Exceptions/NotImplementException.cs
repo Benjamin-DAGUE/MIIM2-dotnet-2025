@@ -12,9 +12,10 @@ public class NotImplementException() : ApiException
 
     #region Methods
 
-    public override ErrorMessage ToObjectModel() => base.ToObjectModel() with
+    public override ErrorMessage ToObjectModel() => new()
     {
-        Code = ErrorCode.NotImplemented
+        Code = ErrorCode.NotImplemented,
+        Message = "Server not implemented"
     };
 
     #endregion

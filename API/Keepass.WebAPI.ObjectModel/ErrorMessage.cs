@@ -2,8 +2,11 @@
 
 public record ErrorMessage
 {
-    public required ErrorCode Code { get; init; }
-    public required string Message { get; init; }
+    private readonly static ErrorMessage _default = new();
+
+    public ErrorCode Code { get; init; } = ErrorCode.Undefined;
+    public string Message { get; init; } = "Internal server error";
+    public static ErrorMessage Default => _default;
 
     public override string ToString() => $"[{Code}] => {Message}";
 }

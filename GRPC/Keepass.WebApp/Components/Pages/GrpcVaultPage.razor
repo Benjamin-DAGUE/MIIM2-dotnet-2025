@@ -1,0 +1,27 @@
+﻿@page "/grpcvaults/{Id:guid}"
+@inject IDownstreamApi DownstreamApi
+@inject NavigationManager NavigationManager
+
+<h3>Vault</h3>
+
+@if (_isLoading == true)
+{
+  <span>Chargement en cours</span>
+}
+else if (_isLoading == false)
+{
+  if (_vault != null)
+  {
+    <span>@_vault.Id</span>
+    <br />
+    <span>@_vault.Name</span>
+    <br />
+    <span>@_vault.Description</span>
+  }
+  else if (_errorMessage != null)
+  {
+    <span>Code erreur : @_errorMessage.Code</span>
+    <br />
+    <span>Message : @_errorMessage.Message</span>
+  }
+}
